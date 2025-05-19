@@ -1,0 +1,111 @@
+﻿@model PracticaBootCamp.Bussines.Teacher
+@{
+    Layout = "~/Views/Shared/_LayoutBcri.cshtml";
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    string url = ViewBag.url;
+    List<SelectListItem> stateTeacher = (List<SelectListItem>)ViewBag.stateTeacherList;
+    List<SelectListItem> userList = (List<SelectListItem>)ViewBag.userList;
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+
+
+
+    @using (Html.BeginForm("Create", "Teacher", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.Hidden("url", url)
+
+        <div class="form-horizontal">
+            <h1><b>Creacion de un nuevo Profesor</b></h1>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Titulo</label>
+                <div class="col-sm-2">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", @id = "Title" } })
+
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Usuario</label>
+                <div class="col-sm-2">
+                    <select id="User_Id" name="User_Id" class="form-control">
+                        <option value="">---Seleccione---</option>
+                        @foreach (var user in userList)
+                        {
+                            var parts = user.Text.Split(' ');
+                            var name = parts.Length > 0 ? parts[0] : "";
+                            var fullName = parts.Length > 1 ? string.Join(" ", parts.Skip(1)) : "";
+                            <option value="@user.Value" data-name="@name" data-fullname="@fullName">
+                                @user.Text
+                            </option>
+                        }
+                    </select>
+                    @Html.ValidationMessageFor(model => model.User.FullName, "", new { @class = "text-danger" })
+                </div>
+
+                @*<div class="col-sm-2">
+            @Html.DropDownList("User_Id", userList, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.User.FullName, "", new { @class = "text-danger" })
+        </div>*@
+            </div>
+
+
+
+            @*falta agregar la fecha de inicio y fin*@
+
+            <div>
+                @*<a href="@Url.Action("Create","ActivityStatus")">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </a>*@
+            </div>
+        </div>
+
+        if (ViewBag.Alert != null)
+        {
+            <div class="alert alert-dismissable alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Error!</strong> @ViewBag.Alert
+            </div>
+        }
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Crear" class="btn btn-default" />
+            </div>
+        </div>
+
+    }
+
+    <div>
+        @Html.ActionLink("Volver a la Grilla", "Index", "Teacher")
+    </div>
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function () {
+        $('#User_Id').on('change', function () {
+            var selected = $(this).find('option:selected');
+            var name = selected.data('name');
+            var fullName = selected.data('fullname');
+            if (name && fullName) {
+                // Elimina paréntesis del nombre y apellido
+                var cleanName = name.replace(/[()]/g, '');
+                var cleanFullName = fullName.replace(/[()]/g, '');
+                $('#Title').val(cleanName + ' ' + cleanFullName);
+            }
+        });
+    });
+</script>

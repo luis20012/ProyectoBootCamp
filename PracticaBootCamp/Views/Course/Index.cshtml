@@ -1,0 +1,195 @@
+﻿@model IEnumerable<PracticaBootCamp.Bussines.Course>
+@{
+
+    Layout = "~/Views/Shared/_LayoutBcri.cshtml";
+    List<SelectListItem> stateCourseList = (List<SelectListItem>)ViewBag.stateCourseList;
+
+    string accessNew = ViewBag.New.ToString().ToLower();
+    string accessEdit = ViewBag.Edit.ToString().ToLower();
+    string accessDetails = ViewBag.Details.ToString().ToLower();
+    string accessDelete = ViewBag.Delete.ToString().ToLower();
+    string accessIndexP = ViewBag.IndexP.ToString().ToLower();
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Views/Course/CourseIndex.css">
+    <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <title>Curso Index</title>
+</head>
+<body>
+    <div>
+
+        <h1><b>Cursos</b></h1>
+
+        @using (Html.BeginForm("Index", "Course", FormMethod.Post))
+        {
+            <div class="">
+
+                <div class="alignLeft paddingDiv" style="display:inline-grid">
+
+                    <div class="alignLeft paddingDiv" style="display:inline-block">
+                        @Html.Label("Nombre ")
+                        @Html.TextBox("Name", ViewBag.FilterName as string, new { @class = "form-control textBox", @maxlength = "30", @size = "30", @id = "Name", @onkeyup = "filterCoursesByName()" })
+                    </div>
+                    <div class="alignLeft paddingDiv" style="display:inline-block">
+                        @Html.Label("Estado")
+                        @Html.DropDownList("StateCourse.Id", stateCourseList, ViewBag.FilterState as string, new
+                   {
+                       @class = "form-control",
+                       @id = "StateCourse.Id"
+                   })
+                        <br />
+                    </div>
+
+
+                    <div class="alignLeft" style="padding-top:0px;padding-left:15px;padding-bottom:20px;">
+                        <input type="submit" class="btn btn-success btn-sm alignLeft" value="Buscar" />
+                    </div>
+
+
+                </div>
+                @*<div style="margin-bottom: 10px;">
+                        <button type="button" class="btn btn-primary btn-sm" onclick="filterCourses('Activo')">Mostrar Activos</button>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="filterCourses('Inactivo')">Mostrar Inactivos</button>
+                        <button type="button" class="btn btn-info btn-sm" onclick="filterCourses('')">Mostrar Todos</button>
+                    </div>*@
+
+            </div><div style="padding-top:10px; padding-bottom:10px;">
+                @if (accessNew == "true")
+                {
+                    <div style="text-align:right;">
+                        <a href="@Url.Action("Create", "Course")" class="btn-success btn-sm">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            Nuevo
+                        </a>
+                    </div>
+                }
+                <div style="text-align:right;">
+                    <a href="@Url.Action("Create", "Qualification")" class="btn-success btn-sm">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        Nuevo
+                    </a>
+                </div>
+
+            </div>
+            <div>
+                <table id="courseTable" class="table table-bordered table-hover" style="background-color:white;">
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">
+                                Nombre Curso
+                            </th>
+                            <th style="text-align: center; width = 8%; ">
+                                Descripcion
+                            </th>
+                            <th style="text-align: center; width = 8%;">
+                                Fecha Inicio
+                            </th>
+                            <th style="text-align: center; width= 8%;">
+                                Fecha Fin
+                            </th>
+
+                            <th style="text-align: center;">
+                                Estado de curso
+                            </th>
+                            <th id="extra" style="text-align: center; width: 8%;">
+                                Extra
+                            </th>
+
+
+                        </tr>
+                    </thead>
+
+                    @foreach (var item in Model@*.Where(c => c.StateCourse != null && c.StateCourse.State == "Activo")*@)
+{
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+
+        @Html.DisplayFor(modelItem => item.Description)
+
+    </td>
+
+    <td>
+
+        @Html.DisplayFor(modelItem => item.StartDate)
+
+    </td>
+    <td>
+
+        @Html.DisplayFor(modelItem => item.EndDate)
+
+    </td>
+    <td>
+
+        @Html.DisplayFor(modelItem => item.StateCourse.State, stateCourseList)
+
+
+
+    </td>
+    <td>
+        @if (accessDetails == "true" || accessEdit == "true" || accessDelete == "true")
+        {
+
+
+            if (accessEdit == "true")
+            {
+
+                <a href="@Url.Action("Edit", "Course", new { id = item.Id })">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true" style=" font-size: 20px;"></span>
+                </a>
+            }
+            if (accessDetails == "true")
+            {
+
+
+                <a href="@Url.Action("Details", "Course", new { id = item.Id })">
+                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="font-size: 20px;"></span>
+                </a>
+            }
+            if (accessDelete == "true")
+            {
+
+                <a href="@Url.Action("Delete", "Course", new { id = item.Id })" onclick="return confirm('Está seguro de que desea eliminar al Curso @item.Name?')">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="false" style="font-size: 20px;"></span>
+                </a>
+            }
+            <a href="@Url.Action("Students", "Course", new { id = item.Id })" class="glyphicon glyphicon-tasks" aria-hidden="true" style="font-size: 20px;">
+
+            </a>
+
+        }
+    </td>
+</tr>
+}
+
+
+
+                </table>
+            </div>
+
+        }
+    </div>
+</body>
+
+</html>
+<script>
+    function filterCoursesByName() {
+        var input = document.getElementById("Name").value.toLowerCase();
+        var table = document.getElementById("courseTable");
+        var rows = table.getElementsByTagName("tr");
+
+        for (var i = 1; i < rows.length; i++) { // empiezo en 1 para saltar el encabezado
+            var cell = rows[i].getElementsByTagName("td")[0]; // columna de Nombre Curso
+            if (cell) {
+                var text = cell.textContent || cell.innerText;
+                rows[i].style.display = text.toLowerCase().includes(input) ? "" : "none";
+            }
+        }
+    }
+</script>

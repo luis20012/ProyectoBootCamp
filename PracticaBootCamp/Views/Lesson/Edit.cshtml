@@ -1,0 +1,120 @@
+﻿@model PracticaBootCamp.Bussines.Lesson
+@{
+
+    Layout = "~/Views/Shared/_LayoutBcri.cshtml";
+    List<SelectListItem> lessonCourses = (List<SelectListItem>)ViewBag.lessonCourses;
+
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar</title>
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    @using (Html.BeginForm(Html.BeginForm("Edit", "Lesson", FormMethod.Post, new { enctype = "multipart/form-data" })))
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h1><b>Editar Videos</b></h1>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Nombre del Video</label>
+            <div class="col-sm-2">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Descripcion del Video</label>
+            <div class="col-sm-2">
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Url</label>
+            <div class="col-sm-2">
+                @Html.EditorFor(model => model.Url, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Url, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        @if (ViewBag.AlertDuplicateArtistName != null)
+        {
+            <div class="alert alert-dismissable alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Error!</strong> @ViewBag.AlertDuplicateArtistName
+            </div>
+        }
+        @if (ViewBag.AlertDuplicatePerson != null)
+        {
+            <div class="alert alert-dismissable alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Warning!</strong> @ViewBag.AlertDuplicatePerson
+            </div>
+        }
+        <div class="form-group">
+            <label class="control-label col-sm-2">Previsualización</label>
+            <div class="col-sm-10">
+                <iframe id="youtubePreview" width="400" height="225" style="display:none;" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <br />
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    }
+
+
+    <div>
+        @Html.ActionLink("Volver a la Grilla", "Index")
+    </div>
+</body>
+</html>
+<script>
+    function updateVideoPreview() {
+        const urlInput = document.getElementById("Url");
+        const youtubePreview = document.getElementById("youtubePreview");
+
+        const url = urlInput.value;
+
+        const regex = /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+        const match = url.match(regex);
+
+        if (match && match[1]) {
+            const videoId = match[1];
+            youtubePreview.src = `https://www.youtube.com/embed/${videoId}`;
+            youtubePreview.style.display = "block";
+        } else {
+            youtubePreview.style.display = "none";
+            youtubePreview.removeAttribute("src");
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        updateVideoPreview();
+
+        const urlInput = document.getElementById("Url");
+        urlInput.addEventListener("input", updateVideoPreview);
+    });
+</script>

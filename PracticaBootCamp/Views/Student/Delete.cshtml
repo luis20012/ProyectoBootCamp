@@ -1,0 +1,33 @@
+﻿@model PracticaBootCamp.Bussines.Student
+
+@{
+    Layout = "~/Views/Shared/_LayoutBcri.cshtml";
+    List<SelectListItem> stateCourse = (List<SelectListItem>)ViewBag.stateCourseList;
+    List<SelectListItem> stateStudentList = (List<SelectListItem>)ViewBag.stateStudentList;
+    List<SelectListItem> userList = (List<SelectListItem>)ViewBag.userList;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <div style="text-align: center; ">
+        <h3>Esta seguro de eliminar el curso @Model.User.Name</h3>
+        <div>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                    @Html.ActionLink("Volver a la Grilla", "Index")
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

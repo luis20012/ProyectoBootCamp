@@ -1,0 +1,311 @@
+﻿@model PracticaBootCamp.Bussines.Course
+
+@{
+    Layout = "~/Views/Shared/_LayoutBcri.cshtml";
+
+    List<SelectListItem> stateCourseList = (List<SelectListItem>)ViewBag.stateCourseList;
+    List<SelectListItem> lessonCourseList = (List<SelectListItem>)ViewBag.lessonCourseList;
+    List<SelectListItem> lessonList = (List<SelectListItem>)ViewBag.lessonList;
+    List<SelectListItem> teacherList = (List<SelectListItem>)ViewBag.teacherList;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*<link rel="stylesheet" href="~/Views/Course/CourseDetailsCss.css">*@
+    <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <title>Curso</title>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1>@ViewData[Model.Name]</h1>
+
+        <div class="course-info-container card p-4 shadow-sm">
+            <div class="d-flex align-items-start gap-4 flex-wrap">
+                <div class="flex-grow-1">
+                    <h2 class="course-title mb-2">@Model.Name</h2>
+                    <p class="course-description">@Html.Raw(Model.Description)</p>
+
+                    <div class="course-meta mt-3">
+                        @if (Model.StartDate.HasValue)
+                        {
+                            <p><i class="bi bi-calendar-check"></i> <strong>Inicio:</strong> @Model.StartDate.Value.ToString("dd/MM/yyyy")</p>
+                            <p><i class="bi bi-calendar-x"></i> <strong>Fin:</strong> @Model.EndDate.Value.ToString("dd/MM/yyyy")</p>
+                        }
+
+                        @if (Model.TeacherCourses != null && Model.TeacherCourses.Any())
+                        {
+                            <p>
+                                <i class="bi bi-person-badge"></i> <strong>Profesor/es:</strong>
+                                @string.Join(", ", Model.TeacherCourses.Select(t => t.Teacher.User.Name + " " + t.Teacher.User.FullName))
+                            </p>
+                        }
+                        else
+                        {
+                            <p><i class="bi bi-person-badge"></i> <strong>Profesor:</strong> No asignado</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    @*<div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="~/images/curso_detalle_default.jpg" alt="Model.Titulo" class="img-fluid rounded">
+            </div>
+        </div>*@
+
+
+
+
+    <div class="col-md-4">
+        <h4 class="mb-3">Explicaciones en videos</h4>
+        <ul class="list-group">
+        </ul>
+    </div>
+    <div class="row mt-4">
+        <!-- Video principal -->
+        <div class="col-md-8">
+            <div class="video-container mb-4">
+                <iframe id="mainVideo" width="100%" height="450" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+
+
+
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+                <button id="prevVideo" class="btn btn-outline-primary">&laquo; Anterior</button>
+                <button id="nextVideo" class="btn btn-outline-primary">Siguiente &raquo;</button>
+            </div>
+            <br />
+        </div>
+        <div class="col-md-4">
+            <h4>Lista de videos</h4>
+            <ul class="list-group">
+                @foreach (var video in Model.LessonCourses.OrderBy(v => v.Lesson.Id))  // Ordenar por título
+                {
+                    var videoId = "";
+                    if (!string.IsNullOrEmpty(video.Lesson.Url))
+                    {
+                        var regex = new System.Text.RegularExpressions.Regex(@"(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})");
+                        var match = regex.Match(video.Lesson.Url);
+                        if (match.Success)
+                        {
+                            videoId = match.Groups[1].Value;
+                        }
+                    }
+
+                    <li class="list-group-item video-item"
+                        data-video-id="@videoId"
+                        style="cursor:pointer;">
+                        <strong>@video.Lesson.Title</strong><br />
+                        <small>@video.Lesson.Description</small>
+                    </li>
+                }
+            </ul>
+
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12 text-center">
+                <a href="@Url.Action("IndexPrincipal", "Course", new { courseId = Model.Id })" class="btn btn-primary mx-2">Índice</a>
+                <a href="@Url.Action("Evaluate", "Course", new { id = Model.Id })" class="btn btn-success mx-2">Evaluación</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const mainVideo = document.getElementById("mainVideo");
+        const videoItems = Array.from(document.querySelectorAll(".video-item"));
+        const prevButton = document.getElementById("prevVideo");
+        const nextButton = document.getElementById("nextVideo");
+        let currentIndex = 0;
+
+        function setVideoByIndex(index) {
+            if (index >= 0 && index < videoItems.length) {
+                const item = videoItems[index];
+                const videoId = item.getAttribute("data-video-id");
+                if (videoId) {
+                    mainVideo.src = `https://www.youtube.com/embed/${videoId}`; // URL correcta para embeber
+                    videoItems.forEach(v => v.classList.remove("active"));
+                    item.classList.add("active");
+                    currentIndex = index;
+                }
+            }
+        }
+
+        // Inicializar primer video
+        if (videoItems.length > 0) {
+            setVideoByIndex(0);
+        }
+
+        // Click individual
+        videoItems.forEach((item, index) => {
+            item.addEventListener("click", function () {
+                setVideoByIndex(index);
+            });
+        });
+
+        // Botones de navegación
+        prevButton.addEventListener("click", function () {
+            setVideoByIndex(currentIndex - 1);
+        });
+
+        nextButton.addEventListener("click", function () {
+            setVideoByIndex(currentIndex + 1);
+        });
+    });
+</script>
+
+
+
+@section Styles {
+    @*<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">*@
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --primary-dark: #0b5ed7;
+            --light-bg: #f8f9fa;
+            --gray-border: rgba(0, 0, 0, 0.125);
+            --text-color: #212529;
+            --text-muted: #6c757d;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --hover-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        /* General */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fff;
+            color: var(--text-color);
+        }
+
+        h1, h2, h4 {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        /* Botones */
+        .btn-secondary {
+            background-color: var(--text-muted);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            font-weight: 500;
+            border-radius: 0.375rem;
+        }
+
+            .btn-secondary:hover {
+                background-color: #545b62;
+            }
+
+        /* Contenedores */
+        .course-info-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .course-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .course-description {
+            font-size: 1rem;
+            color: #495057;
+            line-height: 1.6;
+        }
+
+        /* Metadatos */
+        .course-meta p {
+            margin: 0.4rem 0;
+            font-size: 0.95rem;
+            color: var(--text-color);
+        }
+
+        .course-meta i {
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+
+        /* Video */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1rem;
+        }
+
+            .video-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+
+        /* Lista de videos */
+        ul.list-group {
+            max-height: 500px;
+            overflow-y: auto;
+            padding-left: 0;
+        }
+
+        .video-item {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--gray-border);
+            border-radius: 0.5rem;
+            background-color: var(--light-bg);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+        }
+
+            .video-item:hover {
+                background-color: #e2e6ea;
+                box-shadow: var(--hover-shadow);
+                transform: translateY(-2px);
+            }
+
+            .video-item.active {
+                background-color: var(--primary-color);
+                color: white;
+                font-weight: bold;
+                border-color: var(--primary-dark);
+            }
+
+        /* Cards */
+        .card {
+            border: 1px solid var(--gray-border);
+            border-radius: 0.5rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        /* Imagen */
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+    </style>
+}

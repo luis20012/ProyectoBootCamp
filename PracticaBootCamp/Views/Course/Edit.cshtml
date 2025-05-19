@@ -1,0 +1,103 @@
+﻿@model PracticaBootCamp.Bussines.Course
+
+@{
+    Layout = "~/Views/Shared/_LayoutBcri.cshtml";
+    List<SelectListItem> stateCourseList = (List<SelectListItem>)ViewBag.stateCourseList;
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar</title>
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    @using (Html.BeginForm("Edit", "Course", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h1><b>Editar Curso</b></h1>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Nombre Curso</label>
+                <div class="col-sm-2">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Descripcion Curso</label>
+                <div class="col-sm-2">
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Estado de Actividad</label>
+                <div class="col-sm-2">
+                    @Html.DropDownListFor(model => model.StateCourse, stateCourseList, null, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.StateCourse, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Fecha de FIn</label>
+                <div class="col-sm-2">
+                    @Html.TextBoxFor(model => model.EndDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+                    @*@Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control", type = "date" } })*@
+                    @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            @if (ViewBag.AlertDuplicateArtistName != null)
+            {
+                <div class="alert alert-dismissable alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Error!</strong> @ViewBag.AlertDuplicateArtistName
+                </div>
+            }
+            @if (ViewBag.AlertDuplicatePerson != null)
+            {
+                <div class="alert alert-dismissable alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Warning!</strong> @ViewBag.AlertDuplicatePerson
+                </div>
+            }
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Guardar" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <div style="text-align:left;">
+        <a href="@Url.Action("Create", "LessonCourse")" class="btn-success btn-sm">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            Asignar Videos
+        </a>
+    </div>
+
+    <br />
+    <div>
+        <div style="text-align:left;">
+            <a href="@Url.Action("Index", "Course")" class="btn-success btn-sm">
+                <span class="glyphicon glyphicon-btn" aria-hidden="true"></span>
+                Index
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,263 @@
+﻿@model IEnumerable<PracticaBootCamp.Bussines.Lesson>
+
+@{
+    Layout = "~/Views/Shared/_LayoutBcri.cshtml";
+    List<SelectListItem> lessonCourses = (List<SelectListItem>)ViewBag.lessonCourses;
+
+    string accessNew = ViewBag.New.ToString().ToLower();
+    string accessEdit = ViewBag.Edit.ToString().ToLower();
+    string accessDetails = ViewBag.Details.ToString().ToLower();
+    string accessDelete = ViewBag.Delete.ToString().ToLower();
+
+}
+<h1>Index de Videos</h1>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Views/Lesson/LessonIndex.css">
+
+
+    <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <title>Videos Index</title>
+</head>
+<body>
+    <div>
+
+
+        @using (Html.BeginForm("Index", "Lesson", FormMethod.Post))
+        {
+            <div class="">
+                <div class="alignLeft paddingDiv" style="display:inline-block">
+                    @Html.Label("Titulo ")
+                    @Html.TextBox("Title", null, new { @class = "form-control", @maxlength = "50", @size = "50" })
+
+                </div>
+
+
+                <div class="alignLeft" style="padding-top:0px;padding-left:35px;padding-bottom:30px;">
+                    <input type="submit" class="btn btn-success btn-sm alignLeft" value="Buscar" />
+                </div>
+            </div>
+            <h3>Videos</h3>
+            <div style="padding-top:10px; padding-bottom:10px;">
+                <div>
+
+                    @if (accessNew == "true")
+                    {
+
+                        <div style="text-align:left;">
+                            <a href="@Url.Action("Create", "Lesson")" class="btn-success btn-sm">
+                                <span style="text-align:right;" class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                Nuevo Video
+                            </a>
+                        </div>
+                    }
+                    <br />
+                    <div style="text-align:left;">
+                        <a href="@Url.Action("Create","LessonCourse")" class="btn-success btn-sm">
+                            <span style="text-align:left;" class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            Asignar Video
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+
+
+</body>
+
+
+<div>
+    <table class="table table-bordered table-hover" style="background-color:white;">
+        <thead>
+            <tr>
+                <th style="text-align: center;">
+                    Nombre Curso
+                </th>
+
+                <th style="text-align: center;">
+                    Titulo
+                </th>
+                <th style="text-align: center; ">
+                    Descripcion
+                </th>
+                <th style="text-align: center; ">
+                    Url
+                </th>
+                <th style="text-align: center; width: 6%;">
+                    Extras
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @if (item.LessonCourses != null && item.LessonCourses.Count > 0)
+                        {
+                            <ul>
+                                @foreach (var tc in item.LessonCourses.OrderBy(v => v.Lesson.Id))
+                                {
+                                    <li>@tc.Course.Name</li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <span>No tiene cursos asignados</span>
+                        }
+                    </td>
+                    <td style="text-align: center;">
+                        @item.Title
+                    </td>
+                    <td style="text-align: center;">
+                        @item.Description
+                    </td>
+                    <td style="text-align: center;">
+                        @item.Url
+                    </td>
+                    <td>
+                        @if (accessEdit == "true" || accessDelete == "true" )
+                        {
+
+
+                            if (accessEdit == "true")
+                            {
+                                <a href="@Url.Action("Edit", "Lesson", new { id = item.Id })">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true" style="font-size: 20px;"></span>
+                                </a>
+                            }
+                          
+                            
+                                <a href="javascript:void(0);" onclick="showVideoModal('@item.Url')">
+                                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true" style="font-size: 20px;"></span>
+                                </a>
+
+                           
+
+                            if (accessDelete == "true")
+                            {
+                                <a href="@Url.Action("Delete", "Lesson", new { id = item.Id })" onclick="return confirm('Está seguro de que desea eliminar al Curso @item.Title?')">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="false" style="font-size: 20px;"></span>
+                                </a>
+                            }
+                        }
+                    </td>
+
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div id="videoModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="videoModalLabel"></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <div id="videoContainer" style="width:100%; height:auto;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+
+</html>
+<script>
+    function showVideoModal(url) {
+        let embedHtml = "";
+
+        const youtubeMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+        if (youtubeMatch) {
+            const videoId = youtubeMatch[1];
+            embedHtml = `<iframe width="100%" height="400" src="https://www.youtube.com/embed/${videoId}"
+                            frameborder="0" allowfullscreen></iframe>`;
+        } else if (url.endsWith(".mp4") || url.endsWith(".webm") || url.endsWith(".ogg")) {
+            embedHtml = `<video width="100%" height="400" controls>
+                            <source src="${url}" type="video/mp4">
+                            Tu navegador no soporta video HTML5.
+                         </video>`;
+        } else {
+            embedHtml = `<p>No se pudo cargar el video. URL no compatible.</p>`;
+        }
+
+        document.getElementById("videoContainer").innerHTML = embedHtml;
+        $('#videoModal').modal('show');
+    }
+</script>
+<style>
+    .video-grid {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); /* Ajustado para videos embebidos */
+        gap: 20px;
+    }
+
+    .video-item {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* Proporción de aspecto 16:9 para YouTube */
+        height: 0;
+        overflow: hidden;
+    }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+    .video-details {
+        padding: 10px;
+    }
+
+    .video-title {
+        margin-top: 0;
+        font-size: 1.1em;
+        color: #030303;
+        margin-bottom: 5px;
+    }
+
+    .channel-name {
+        color: #606060;
+        font-size: 0.9em;
+        margin-bottom: 3px;
+    }
+
+    .views {
+        color: #606060;
+        font-size: 0.85em;
+    }
+
+    /* Estilos de hover para interactividad */
+    .video-item:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+</style>

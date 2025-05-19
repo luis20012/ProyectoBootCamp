@@ -1,0 +1,96 @@
+﻿
+@model PracticaBootCamp.Bussines.TeacherCourse
+
+@{
+    Layout = "~/Views/Shared/_LayoutBcri.cshtml";
+    List<SelectListItem> courseList = (List<SelectListItem>)ViewBag.courseList;
+    List<SelectListItem> teacherList = (List<SelectListItem>)ViewBag.teacherList;
+    List<SelectListItem> userList = (List<SelectListItem>)ViewBag.userList;
+    List<SelectListItem> profesorUsuarioList = (List<SelectListItem>)ViewBag.profesorUsuarioList;
+
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    @using (Html.BeginForm("Create", "TeacherCourse", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h1><b>Nueva asociación de profesor a curso</b></h1>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label class="control-label col-sm-2">Profesor</label>
+                <div class="col-sm-2">
+                    @Html.DropDownList("Teacher_Id", teacherList, null, new { @class = "form-control" , @id = "Teacher_Id" })
+                    @Html.ValidationMessageFor(model => model.Teacher, null, new { @class = "text-danger" })
+                </div>
+                <div>
+                    <a href="@Url.Action("Create","Teacher")">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Curso</label>
+                <div class="col-sm-2">
+                    @Html.DropDownList("Course_Id", courseList, null, new { @class = "form-control", @id = "Course_Id" })
+                    @Html.ValidationMessageFor(model => model.Course, "", new { @class = "text-danger" })
+                </div>
+                <div>
+                    <a href="@Url.Action("Create","Course")">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+
+
+            @if (ViewBag.Alert != null)
+            {
+                <div class="alert alert-dismissable alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Error!</strong> @ViewBag.Alert
+                </div>
+            }
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Crear" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Volver a la Grilla", "Index", "Teacher")
+    </div>
+</body>
+</html>
+
+<script>
+
+    $(document).ready(function () {
+        // Inicializar Select2 en ambos selects
+        $('#Teacher_Id').select2({
+           
+            allowClear: true,
+            width: 'resolve'
+        });
+
+        $('#Course_Id').select2({
+            allowClear: true,
+            width: 'resolve'
+        });
+    });
+</script>

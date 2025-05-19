@@ -1,0 +1,95 @@
+﻿
+@model PracticaBootCamp.Bussines.StudentCourse
+
+@{
+    Layout = "~/Views/Shared/_LayoutBcri.cshtml";
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    List<SelectListItem> courseList = (List<SelectListItem>)ViewBag.courseList;
+    List<SelectListItem> studentList = (List<SelectListItem>)ViewBag.studentList;
+    List<SelectListItem> userList = (List<SelectListItem>)ViewBag.userList;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    @using (Html.BeginForm("Create", "StudentCourse", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h1><b>Nueva asociación Curso Estudiante</b></h1>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label class="control-label col-sm-2">Estudiante</label>
+                <div class="col-sm-2">
+                    @Html.DropDownList("Student_Id", studentList, null, new { @class = "form-control", @id = "Student_Id" })
+                    @Html.ValidationMessageFor(model => model.Student.Id, "", new { @class = "text-danger" })
+                </div>
+               
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Curso</label>
+                <div class="col-sm-2">
+                    @Html.DropDownList("Course_Id", courseList, null, new { @class = "form-control", @id = "Course_Id" })
+                    @Html.ValidationMessageFor(model => model.Course, "", new { @class = "text-danger" })
+                </div>
+                <div>
+                    <a href="@Url.Action("Create","Course")">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+
+
+
+            @if (ViewBag.Alert != null)
+            {
+                <div class="alert alert-dismissable alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Error!</strong> @ViewBag.Alert
+                </div>
+            }
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Crear" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Volver a la Grilla", "Index", "Student")
+    </div>
+</body>
+</html>
+<!-- jQuery y Select2 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        // Inicializar Select2 en ambos selects
+        $('#Student_Id').select2({
+            allowClear: true,
+            width: 'resolve'
+        });
+
+        $('#Course_Id').select2({
+            allowClear: true,
+            width: 'resolve'
+        });
+    });
+</script>
+
+
+

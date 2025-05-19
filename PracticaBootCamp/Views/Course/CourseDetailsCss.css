@@ -1,0 +1,88 @@
+﻿
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Estilos generales */
+.container {
+    margin-top: 2rem;
+}
+
+h1, h2, h4 {
+    color: #212529;
+}
+
+.card {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    line-height: 1.7;
+}
+
+/* Video embebido */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        border-radius: 12px;
+    }
+
+/* Lista de videos */
+.list-group {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.list-group-item {
+    background-color: #f8f9fa;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+    .list-group-item:hover {
+        background-color: #e2e6ea;
+    }
+
+
+
+/* Botones */
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+}
+
+    .btn-secondary:hover {
+        background-color: #545b62;
+    }

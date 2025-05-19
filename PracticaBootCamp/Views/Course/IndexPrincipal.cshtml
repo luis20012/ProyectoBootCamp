@@ -1,0 +1,104 @@
+﻿@model IEnumerable<PracticaBootCamp.Bussines.Course>
+@{
+
+    Layout = "~/Views/Shared/_LayoutBcri.cshtml";
+    List<SelectListItem> stateCourse = (List<SelectListItem>)ViewBag.stateCourseList;
+    List<SelectListItem> lessonCourseList = (List<SelectListItem>)ViewBag.lessonCourseList;
+
+    string accessIndexP = ViewBag.New.ToString().ToLower();
+}
+
+    @using (Html.BeginForm("Index", "Course", FormMethod.Post))
+    {
+        <h1>@ViewData["CourseIndexPrincipal"]</h1>
+
+        <section class="cursos-container">
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model/*.Where(c => c.StateCourse != null && c.StateCourse.State == "Activo")*/)
+                {
+                    <article class="curso-card">
+                        @*<img src=@item.Image alt="Imagen genérica del curso" class="curso-imagen">*@
+                        <div class="curso-contenido">
+                            <h3 class="curso-titulo">@item.Name</h3>
+                            <p class="curso-descripcion">@Html.Raw(item.Description)</p>
+
+                            <a href="@Url.Action("Details", "Course", new { id = item.Id })" class="curso-boton">Ver más detalles</a>
+
+                        </div>
+                    </article>
+                }
+            }
+            else
+            {
+                <p>No hay cursos disponibles en este momento.</p>
+            }
+        </section>
+    }
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <style>
+        .cursos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+
+        .curso-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        .curso-imagen {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 16 / 9; /* Proporción común para imágenes */
+        }
+
+        .curso-contenido {
+            padding: 15px;
+        }
+
+        .curso-titulo {
+            font-size: 1.2em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .curso-descripcion {
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .curso-boton {
+            align-self: flex-start;
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+            .curso-boton:hover {
+                background-color: #0056b3;
+            }
+
+        .sin-detalles {
+            color: #999;
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+    </style>
+}

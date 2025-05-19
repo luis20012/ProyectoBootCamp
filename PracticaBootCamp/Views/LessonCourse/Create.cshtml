@@ -1,0 +1,120 @@
+﻿
+@model PracticaBootCamp.Bussines.LessonCourse
+
+@{
+    List<SelectListItem> lessonList = (List<SelectListItem>)ViewBag.lessonList;
+    List<SelectListItem> courseList = (List<SelectListItem>)ViewBag.courseList;
+    List<SelectListItem> lessonUrlList = (List<SelectListItem>)ViewBag.lessonUrlList;
+    Layout = "~/Views/Shared/_LayoutBcri.cshtml";
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+</head>
+<body>
+    @using (Html.BeginForm("Create", "LessonCourse", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h1><b>Relacionar videos con cursos</b></h1>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Curso</label>
+                <div class="col-sm-2">
+                    @Html.DropDownListFor(model => model.Course, courseList, null, new { @class = "form-control", @id = "courseSelect" })
+                    @Html.ValidationMessageFor(model => model.Course, "", new { @class = "text-danger" })
+                </div>
+                @*<div>
+                        <a href="@Url.Action("Create","Course")">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </a>
+                    </div>*@
+            </div>
+            
+            <div class="form-group">
+                <label class="control-label col-sm-2">Videos</label>
+                <div class="col-sm-2">
+                    @Html.DropDownListFor(model => model.Lesson, lessonList, null, new { @class = "form-control", @id = "lessonSelect" })
+                    @Html.ValidationMessageFor(model => model.Lesson, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group" id="previewContainer" style="display:none; margin-top:15px;">
+            <label class="control-label col-sm-2">Previsualización</label>
+            <div class="col-sm-10">
+                <iframe id="videoPreview" width="400" height="250" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div>
+
+            @if (ViewBag.Alert != null)
+            {
+                <div class="alert alert-dismissable alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Error!</strong> @ViewBag.Alert
+                </div>
+            }
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Crear" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+    }
+
+    <div class="btn btn-default">
+        @Html.ActionLink("Index", "Index", "Course")
+    </div>
+</body>
+</html>
+<!-- jQuery y Select2 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Inicializar Select2
+        $('#lessonSelect').select2({
+            allowClear: true,
+            width: 'resolve' // Asegura que se ajuste al contenedor
+        });
+        $('#courseSelect').select2({
+            allowClear: true,
+            width: 'resolve' // Asegura que se ajuste al contenedor
+        });
+        // Manejar cambio en selección
+        $('#lessonSelect').on('change', function () {
+            var selectedOption = $(this).find('option:selected');
+            var url = selectedOption.data('url');
+            if (url) {
+                // Si es una URL de YouTube, puede que necesites transformarla a embed
+                if (url.includes("youtube.com/watch?v=")) {
+                    var embedUrl = url.replace("watch?v=", "embed/");
+                    $('#videoPreview').attr('src', embedUrl);
+                } else {
+                    $('#videoPreview').attr('src', url);
+                }
+                $('#previewContainer').show();
+            } else {
+                $('#videoPreview').attr('src', '');
+                $('#previewContainer').hide();
+            }
+        });
+    });
+</script>
+

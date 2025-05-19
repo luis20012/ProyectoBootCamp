@@ -1,0 +1,185 @@
+﻿@model IEnumerable<PracticaBootCamp.Bussines.Teacher>
+@{
+    Layout = "~/Views/Shared/_LayoutBcri.cshtml";
+    List<SelectListItem> stateTeacherList = (List<SelectListItem>)ViewBag.stateTeacherList;
+    List<SelectListItem> userList = (List<SelectListItem>)ViewBag.userList;
+    string accessNew = ViewBag.New.ToString().ToLower();
+    string accessEdit = ViewBag.Edit.ToString().ToLower();
+    string accessDelete = ViewBag.Delete.ToString().ToLower();
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Views/Course/CourseIndex.css">
+    <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <title>Profesor Index</title>
+</head>
+<body>
+    <div>
+        <h1><b>Profesor</b></h1>
+
+        @using (Html.BeginForm("Index", "Teacher", FormMethod.Post))
+        {
+            <div class="">
+                <div class="alignLeft paddingDiv" style="display:inline-block">
+                    @Html.Label("Nombre ")
+                    @Html.TextBox("User.Name", null, new { @class = "form-control textBox", @maxlength = "50",
+                   @size = "50",
+                   @id = "Name",
+                   @onkeyup = "filterStudentsByName()"
+               })
+                    
+                </div>
+                <br />
+
+                <div class="alignLeft paddingDiv" style="display:inline-block">
+                    @Html.Label("Estado del Profesor")
+                    @Html.DropDownList("StateTeacher.Id", stateTeacherList, null, new { @class = "form-control" })
+                    
+                </div>
+                <div class="alignLeft" style="padding-top:0px;padding-left:35px;padding-bottom:30px;">
+                    <input type="submit" class="btn btn-success btn-sm alignLeft" value="Buscar" />
+                </div>
+            </div>
+            <div style="padding-top:10px; padding-bottom:10px;">
+                <h3>Profesores</h3>
+                @if (accessNew == "true")
+                {
+                    <div style="text-align:left;">
+                        <a href="@Url.Action("Create", "Teacher")" class="btn-success btn-sm">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            Nuevo
+                        </a>
+                    </div>
+                }
+                <br />
+                <div style="text-align:left;">
+                    <a href="@Url.Action("Create","TeacherCourse")" class="btn-success btn-sm">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        Asignar curso
+                    </a>
+                </div>
+            </div>
+            <div>
+                <table class="table table-bordered table-hover" style="background-color:white;">
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">
+                                Nombre
+                            </th>
+                            <th style="text-align: center; ">
+                                Apellido
+                            </th>
+                            <th style="text-align: center; ">
+                                Titulo
+                            </th>
+
+                            <th style="text-align: center;">
+                                Estado del Profesor
+                            </th>
+                            <th style="text-align: center;">
+                                Curso
+                            </th>
+                            <th style=" width: 4%; ">
+                                Extra<br />
+                                <div>
+
+                                </div>
+                            </th>
+
+
+
+                        </tr>
+                    </thead>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td style="text-align: left; width: 10%;">
+                                @Html.DisplayFor(modelItem => item.User.Name)
+                            </td>
+                            <td style="text-align: left; width: 15%;">
+
+                                @Html.DisplayFor(modelItem => item.User.FullName)
+
+                            </td>
+
+                            <td style="text-align: left; width: 8%; ">
+
+                                @Html.DisplayFor(modelItem => item.Title)
+
+                            </td>
+
+                            <td style="text-align: left; width: 8%; ">
+
+                                @Html.DisplayFor(modelItem => item.StateTeacher.State)
+
+                            </td>
+
+                            <td style="text-align: left; width: 8%; ">
+                                @if (item.TeacherCourses != null && item.TeacherCourses.Count > 0)
+                                {
+                                    <ul>
+                                        @foreach (var tc in item.TeacherCourses)
+                                        {
+                                            <li>@tc.Course.Name</li>
+                                        }
+                                    </ul>
+                                }
+                                else
+                                {
+                                    <span>No tiene cursos asignados</span>
+                                }
+                            </td>
+
+
+                            <td>
+                                @if (accessEdit == "true" || accessDelete == "true")
+                                {
+                                    if (accessEdit == "true")
+                                    {
+                                        <a href="@Url.Action("Edit", "Teacher", new { id = item.Id })">
+                                            <span class="glyphicon glyphicon-edit" aria-hidden="true" style="font-size: 20px;"></span>
+                                        </a>
+                                    }
+                                    @*<a href="@Url.Action("Details", "Teacher", new { id = item.Id })">
+                                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="font-size: 20px;"></span>
+                                        </a>*@
+                                    if (accessDelete == "true")
+                                    {
+                                        <a href="@Url.Action("Delete", "Teacher", new { id = item.Id })" onclick="return confirm('Esta Seguro de Eliminar el Profesor @item.User.Name?')">
+                                            <span class="glyphicon glyphicon-trash" aria-hidden="true" style="font-size: 20px;"></span>
+                                        </a>
+                                    }
+                                }
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+
+        }
+    </div>
+</body>
+</html>
+<script>
+
+    function filterStudentsByName() {
+        var input = document.getElementById("Name").value.toLowerCase();
+        var table = document.querySelector("table");
+        var rows = table.getElementsByTagName("tr");
+
+        for (var i = 1; i < rows.length; i++) {
+            var nameCell = rows[i].getElementsByTagName("td")[0];
+            var lastNameCell = rows[i].getElementsByTagName("td")[1];
+            var name = nameCell ? nameCell.textContent.toLowerCase() : "";
+            var lastName = lastNameCell ? lastNameCell.textContent.toLowerCase() : "";
+
+            rows[i].style.display = (name.includes(input) || lastName.includes(input)) ? "" : "none";
+        }
+    }
+
+</script>

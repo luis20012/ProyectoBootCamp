@@ -1,0 +1,103 @@
+﻿@model PracticaBootCamp.Bussines.Lesson
+
+@{
+    Layout = "~/Views/Shared/_LayoutBcri.cshtml";
+    string url = ViewBag.url;
+    List<SelectListItem> lessonCourses = (List<SelectListItem>)ViewBag.lessonCourses;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Views/Lesson/LessonIndex.css" />
+    <title>Agregar video</title>
+</head>
+<body>
+
+
+    @using (Html.BeginForm("Create", "Lesson", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.Hidden("url", url)
+
+        <div class="form-horizontal">
+            <h1><b>Agregar video</b></h1>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Titulo</label>
+                <div class="col-sm-2">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div><div class="form-group">
+                <label class="control-label col-sm-2">Descripcion </label>
+                <div class="col-sm-2">
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Url del video</label>
+                <div class="col-sm-2">
+                    @Html.EditorFor(model => model.Url, null, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Url, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Previsualización</label>
+                <div class="col-sm-10">
+                    <iframe id="youtubePreview" width="400" height="225" style="display:none;" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+            <br />
+
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Crear" class="btn btn-default" />
+            </div>
+        </div>
+
+    }
+    @if (ViewBag.Alert != null)
+    {
+        <div style="color: red; font-weight: bold;">
+            @ViewBag.Alert
+        </div>
+    }
+    <div>
+        @Html.ActionLink("Volver a la Grilla", "Index", "Lesson")
+    </div>
+</body>
+
+</html>
+<script>
+    const urlInput = document.getElementById("Url");
+    const youtubePreview = document.getElementById("youtubePreview");
+
+    urlInput.addEventListener("input", function () {
+        const url = urlInput.value;
+
+        // Expresiones regulares para detectar y extraer el ID del video
+        const regex = /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+        const match = url.match(regex);
+
+        if (match && match[1]) {
+            const videoId = match[1];
+            youtubePreview.src = `https://www.youtube.com/embed/${videoId}`;
+            youtubePreview.style.display = "block";
+        } else {
+            youtubePreview.style.display = "none";
+            youtubePreview.removeAttribute("src");
+        }
+    });
+</script>

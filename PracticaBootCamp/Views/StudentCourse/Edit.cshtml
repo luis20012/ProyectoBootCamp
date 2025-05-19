@@ -1,0 +1,91 @@
+﻿@model PracticaBootCamp.Bussines.StudentCourse
+
+@{
+    Layout = "~/Views/Shared/_LayoutBcri.cshtml";
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    List<SelectListItem> courseList = (List<SelectListItem>)ViewBag.courseList;
+    List<SelectListItem> studentList = (List<SelectListItem>)ViewBag.studentList;
+    List<SelectListItem> userList = (List<SelectListItem>)ViewBag.userList;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    @using (Html.BeginForm(Html.BeginForm("Edit", "StudentCourse", FormMethod.Post, new { enctype = "multipart/form-data" })))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h1><b>Editar Nota</b></h1>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+
+            @*<div class="form-group">
+                <label class="control-label col-sm-2">Nombre del Profesor</label>
+                <div class="col-sm-2">
+                    @Html.EditorFor(model => model.Average, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Average, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+            <div class="form-group">
+                <label class="control-label col-sm-2">Estudiante</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" value="@Model.Student.User.FullName" disabled />
+                    @Html.HiddenFor(model => model.Student.Id)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Curso</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" value="@Model.Course.Name" disabled />
+                    @Html.HiddenFor(model => model.Course.Id)
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <div>
+
+
+            @if (ViewBag.AlertDuplicateArtistName != null)
+            {
+                <div class="alert alert-dismissable alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Error!</strong> @ViewBag.AlertDuplicateArtistName
+                </div>
+            }
+            @if (ViewBag.AlertDuplicatePerson != null)
+            {
+                <div class="alert alert-dismissable alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Warning!</strong> @ViewBag.AlertDuplicatePerson
+                </div>
+            }
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Guardar" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Volver a la Grilla", "Index")
+    </div>
+</body>
+</html>

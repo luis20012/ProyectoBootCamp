@@ -1,0 +1,58 @@
+﻿@model IEnumerable<PracticaBootCamp.Bussines.Student>
+@{
+
+    Layout = "~/Views/Shared/_LayoutBcri.cshtml";
+    List<SelectListItem> stateCourseList = (List<SelectListItem>)ViewBag.stateCourseList;
+    List<SelectListItem> lessonCourseList = (List<SelectListItem>)ViewBag.lessonCourseList;
+    List<SelectListItem> lessonList = (List<SelectListItem>)ViewBag.lessonList;
+    List<SelectListItem> teacherList = (List<SelectListItem>)ViewBag.teacherList;
+    List<SelectListItem> stateStudentList = (List<SelectListItem>)ViewBag.stateStudentList;
+    List<SelectListItem> userList = (List<SelectListItem>)ViewBag.userList;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Estado</th>
+            <th>Nota</th>
+            <th>Extra</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.User.Name</td>
+                <td>@student.User.FullName</td>
+                <td>@student.StateStudent.State</td>
+                <td>
+                    @{
+                        var courseId = (long)ViewBag.CourseId;
+                        var courseMatch = student.StudentCourses.FirstOrDefault(sc => sc.Course.Id == courseId);
+                    }
+
+                    @if (courseMatch != null)
+                    {
+                        @courseMatch.Average
+                    }
+                    else
+                    {
+                        <span>-</span>
+                    }
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", "StudentCourse", new { id = student.Id })">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true" style=" font-size: 20px;"></span>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-default" href="@Url.Action("Index", "Course")">Volver a Cursos</a>

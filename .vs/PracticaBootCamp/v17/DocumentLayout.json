@@ -1,0 +1,938 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|c:\\users\\luisc\\source\\repos\\practicabootcamp\\practicabootcamp\\views\\studentcourse\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\studentcourse\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\models\\lessoncourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\models\\lessoncourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\teacher\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\teacher\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\controllers\\studentcoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\controllers\\studentcoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\lesson\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\lesson\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|c:\\users\\luisc\\source\\repos\\practicabootcamp\\practicabootcamp\\controllers\\lessoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\controllers\\lessoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\course\\students.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\course\\students.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\controllers\\lessoncoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\controllers\\lessoncoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\studentcourse\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\studentcourse\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\course\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\course\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\models\\studentcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\models\\studentcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\controllers\\teachercoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\controllers\\teachercoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|c:\\users\\luisc\\source\\repos\\practicabootcamp\\practicabootcamp\\views\\course\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\course\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\qualification\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\qualification\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\models\\lesson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\models\\lesson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\controllers\\qualificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\controllers\\qualificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\course\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\course\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\models\\qualification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\models\\qualification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\course\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\course\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\student\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\student\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\course\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\course\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\teacher\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\teacher\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\student\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\student\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\teacher\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\teacher\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\lesson\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\lesson\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\models\\statecourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\models\\statecourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\teacher\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\teacher\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\teachercourse\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\teachercourse\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\lessoncourse\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\lessoncourse\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\course\\indexprincipal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\course\\indexprincipal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\lesson\\lessonindex.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\lesson\\lessonindex.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\lesson\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\lesson\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\lesson\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\lesson\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\models\\teacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\models\\teacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\student\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\student\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\models\\teachercourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\models\\teachercourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\migrations\\addtokencolums.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\migrations\\addtokencolums.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\models\\stateteacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\models\\stateteacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\practicabootcamp\\models\\statestudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707A0AB6-EA6F-4821-9266-B44F8D02F5C6}|PracticaBootCamp\\PracticaBootCamp.csproj|solutionrelative:practicabootcamp\\models\\statestudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 62,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TeacherController.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\TeacherController.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Controllers\\TeacherController.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\TeacherController.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Controllers\\TeacherController.cs",
+              "ViewState": "AgIAANoAAAAAAAAAAAAIwPIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T12:00:45.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Course\\Create.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Course\\Create.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Course\\Create.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Course\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-14T11:41:14.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Course\\Index.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Course\\Index.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Course\\Index.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Course\\Index.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEYAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-13T11:40:01.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Controllers\\CourseController.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Controllers\\CourseController.cs",
+              "ViewState": "AgIAAFoBAAAAAAAAAADwv2kBAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T03:28:04.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LessonCourseController.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\LessonCourseController.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Controllers\\LessonCourseController.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\LessonCourseController.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Controllers\\LessonCourseController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAlwDYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T20:32:00.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Qualification\\Create.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Qualification\\Create.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Qualification\\Create.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Qualification\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-18T06:46:18.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LessonCourse.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\LessonCourse.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Models\\LessonCourse.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\LessonCourse.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Models\\LessonCourse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T20:31:57.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "StudentCourse.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\StudentCourse.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Models\\StudentCourse.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\StudentCourse.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Models\\StudentCourse.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAIwBoAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T22:47:33.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TeacherCourseController.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\TeacherCourseController.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Controllers\\TeacherCourseController.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\TeacherCourseController.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Controllers\\TeacherCourseController.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAYwCEAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T01:05:52.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Course\\Edit.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Course\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Course\\Edit.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Course\\Edit.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-12T14:49:00.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Teacher\\Edit.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Teacher\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Teacher\\Edit.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Teacher\\Edit.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACcAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-08T14:30:15.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Models\\Student.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\Student.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Models\\Student.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAYwEgAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T22:39:38.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Global.asax.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Global.asax.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Global.asax.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Global.asax.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAQwFUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T00:17:36.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Lesson\\Index.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Lesson\\Index.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Lesson\\Index.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Lesson\\Index.cshtml",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-09T20:46:10.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Lesson.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\Lesson.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Models\\Lesson.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\Lesson.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Models\\Lesson.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAiwB0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T22:47:51.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "QualificationController.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\QualificationController.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Controllers\\QualificationController.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\QualificationController.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Controllers\\QualificationController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAADwvyYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T06:33:35.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Student\\Create.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Student\\Create.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Student\\Create.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Student\\Create.cshtml",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAAEQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-06T03:52:36.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Qualification.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\Qualification.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Models\\Qualification.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\Qualification.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Models\\Qualification.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T06:25:23.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Teacher\\Delete.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Teacher\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Teacher\\Delete.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Teacher\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-18T02:49:09.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Course\\Delete.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Course\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Course\\Delete.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Course\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-12T01:18:41.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Student\\Edit.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Student\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Student\\Edit.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Student\\Edit.cshtml",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-08T04:24:24.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Course\\Details.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Course\\Details.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Course\\Details.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Course\\Details.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-12T13:05:55.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Course.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\Course.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Models\\Course.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\Course.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Models\\Course.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAwwF8AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T23:57:47.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Teacher\\Create.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Teacher\\Create.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Teacher\\Create.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Teacher\\Create.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAG4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-08T00:32:24.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Teacher\\Index.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Teacher\\Index.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Teacher\\Index.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Teacher\\Index.cshtml",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAQwLgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-08T00:32:12.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "StateCourse.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\StateCourse.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Models\\StateCourse.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\StateCourse.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Models\\StateCourse.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T23:59:55.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\TeacherCourse\\Create.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\TeacherCourse\\Create.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\TeacherCourse\\Create.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\TeacherCourse\\Create.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-08T02:32:11.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\LessonCourse\\Create.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\LessonCourse\\Create.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\LessonCourse\\Create.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\LessonCourse\\Create.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAGYAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-12T05:35:28.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAQwA8AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:59:02.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Lesson\\Edit.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Lesson\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Lesson\\Edit.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Lesson\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-07T20:21:34.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "IndexPrincipal.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Course\\IndexPrincipal.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Course\\IndexPrincipal.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Course\\IndexPrincipal.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Course\\IndexPrincipal.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-08T13:51:14.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Lesson\\Details.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Lesson\\Details.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Lesson\\Details.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Lesson\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-13T12:43:31.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "LessonIndex.css",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Lesson\\LessonIndex.css",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Lesson\\LessonIndex.css",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Lesson\\LessonIndex.css",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Lesson\\LessonIndex.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-13T12:44:52.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Teacher.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\Teacher.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Models\\Teacher.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\Teacher.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Models\\Teacher.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T02:55:52.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Student\\Delete.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Student\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Student\\Delete.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Student\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-12T01:18:33.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "TeacherCourse.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\TeacherCourse.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Models\\TeacherCourse.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\TeacherCourse.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Models\\TeacherCourse.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAADkAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:33:59.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\App_Start\\RouteConfig.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "PracticaBootCamp\\App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:59:49.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "AddTokenColums.sql",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Migrations\\AddTokenColums.sql",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Migrations\\AddTokenColums.sql",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Migrations\\AddTokenColums.sql",
+              "RelativeToolTip": "PracticaBootCamp\\Migrations\\AddTokenColums.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-08T03:22:10.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Web.config",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Web.config",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Web.config",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Web.config",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-05-09T15:23:54.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Web.config",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Web.config",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Web.config",
+              "RelativeToolTip": "PracticaBootCamp\\Web.config",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-05-09T15:23:59.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "BundleConfig.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\App_Start\\BundleConfig.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\App_Start\\BundleConfig.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\App_Start\\BundleConfig.cs",
+              "RelativeToolTip": "PracticaBootCamp\\App_Start\\BundleConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:59:46.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "FilterConfig.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\App_Start\\FilterConfig.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\App_Start\\FilterConfig.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\App_Start\\FilterConfig.cs",
+              "RelativeToolTip": "PracticaBootCamp\\App_Start\\FilterConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:59:44.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "StateTeacher.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\StateTeacher.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Models\\StateTeacher.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\StateTeacher.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Models\\StateTeacher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T00:19:30.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "StateStudent.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\StateStudent.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Models\\StateStudent.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Models\\StateStudent.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Models\\StateStudent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T00:13:25.724Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 88,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "b1c5792f-4149-44da-a5f5-1cc936e93427",
+        "Display": 1,
+        "X": 383,
+        "Y": 0,
+        "Width": 970,
+        "Height": 1037,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\StudentCourse\\Edit.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\StudentCourse\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\StudentCourse\\Edit.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\StudentCourse\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-18T20:31:56.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Lesson\\Create.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Lesson\\Create.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Lesson\\Create.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Lesson\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-07T20:20:00.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Controllers\\StudentController.cs",
+              "ViewState": "AgIAANMAAAAAAAAAAAAswGQAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T04:52:53.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\StudentCourse\\Create.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\StudentCourse\\Create.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\StudentCourse\\Create.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\StudentCourse\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-08T01:11:36.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Student\\Index.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Student\\Index.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Student\\Index.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Student\\Index.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAKAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-07T22:39:25.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LessonController.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\LessonController.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Controllers\\LessonController.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\LessonController.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Controllers\\LessonController.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAIwIEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T04:52:53.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Students.cshtml",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Course\\Students.cshtml",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Views\\Course\\Students.cshtml",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Views\\Course\\Students.cshtml",
+              "RelativeToolTip": "PracticaBootCamp\\Views\\Course\\Students.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADAAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-18T05:55:25.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StudentCourseController.cs",
+              "DocumentMoniker": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\StudentCourseController.cs",
+              "RelativeDocumentMoniker": "PracticaBootCamp\\Controllers\\StudentCourseController.cs",
+              "ToolTip": "C:\\Users\\luisc\\source\\repos\\PracticaBootCamp\\PracticaBootCamp\\Controllers\\StudentCourseController.cs",
+              "RelativeToolTip": "PracticaBootCamp\\Controllers\\StudentCourseController.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAswMIAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:38:29.993Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
