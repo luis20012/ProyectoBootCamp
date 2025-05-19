@@ -4,6 +4,7 @@
     List<SelectListItem> stateStudentList = (List<SelectListItem>)ViewBag.stateStudentList;
     List<SelectListItem> userList = (List<SelectListItem>)ViewBag.userList;
     string accessNew = ViewBag.New.ToString().ToLower();
+    string accessSCNew = ViewBag.New.ToString().ToLower();
     string accessEdit = ViewBag.Edit.ToString().ToLower();
     string accessDelete = ViewBag.Delete.ToString().ToLower();
 }
@@ -12,13 +13,13 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="~/Views/Course/CourseIndex.css">
+    <link href="~/Views/Lesson/LessonIndex.css" rel="stylesheet" />
     <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
     <title>Student Index</title>
 </head>
 <body>
     <div>
-        <h1><b>Estudiante</b></h1>
+        <h1><b>Estudiantes</b></h1>
 
         @using (Html.BeginForm("Index", "Student", FormMethod.Post))
         {
@@ -46,7 +47,7 @@
                 </div>
             </div>
             <div style="padding-top:10px; padding-bottom:10px;">
-                <h3>Estudiantes</h3>
+                
                 <div style="text-align:left;">
 
                     <div style="text-align:left;">
@@ -60,14 +61,17 @@
                             </div>
                         }
                         <br />
-                        <div>
-                            <a href="@Url.Action("Create","StudentCourse")" class="btn-success btn-sm">
-                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                Asignar Curso
-                            </a>
-                        </div>
+                        @if (accessSCNew == "true")
+                        {
+                            <div>
+                                <a href="@Url.Action("Create", "StudentCourse")" class="btn-success btn-sm">
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    Asignar Curso
+                                </a>
+                            </div>
+                        }
 
-                    </div>
+                        </div>
                 </div>
             </div>
             <div>

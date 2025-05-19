@@ -19,73 +19,46 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
 
+@using (Html.BeginForm("Edit", "StudentCourse", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(model => model.Id)
+    @Html.AntiForgeryToken()
 
-    @using (Html.BeginForm(Html.BeginForm("Edit", "StudentCourse", FormMethod.Post, new { enctype = "multipart/form-data" })))
-    {
-        @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-horizontal">
-            <h1><b>Editar Nota</b></h1>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.Id)
+    <h1><b>Editar Nota</b></h1>
+    <hr />
 
-            @*<div class="form-group">
-                <label class="control-label col-sm-2">Nombre del Profesor</label>
-                <div class="col-sm-2">
-                    @Html.EditorFor(model => model.Average, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Average, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-            <div class="form-group">
-                <label class="control-label col-sm-2">Estudiante</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" value="@Model.Student.User.FullName" disabled />
-                    @Html.HiddenFor(model => model.Student.Id)
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="control-label col-sm-2">Curso</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" value="@Model.Course.Name" disabled />
-                    @Html.HiddenFor(model => model.Course.Id)
-                </div>
-            </div>
-
-
-
+    <div class="form-group">
+        <label class="control-label col-sm-2">Promedio</label>
+        <div class="col-sm-2">
+            @Html.EditorFor(model => model.Average, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Average, "", new { @class = "text-danger" })
         </div>
-
-
-        <div>
-
-
-            @if (ViewBag.AlertDuplicateArtistName != null)
-            {
-                <div class="alert alert-dismissable alert-danger">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>Error!</strong> @ViewBag.AlertDuplicateArtistName
-                </div>
-            }
-            @if (ViewBag.AlertDuplicatePerson != null)
-            {
-                <div class="alert alert-dismissable alert-danger">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>Warning!</strong> @ViewBag.AlertDuplicatePerson
-                </div>
-            }
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Guardar" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
-    }
-
-    <div>
-        @Html.ActionLink("Volver a la Grilla", "Index")
     </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Estudiante</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" value="@Model.Student.User.FullName" disabled />
+            @Html.HiddenFor(model => model.Student.Id)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Curso</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" value="@Model.Course.Name" disabled />
+            @Html.HiddenFor(model => model.Course.Id)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Guardar" class="btn btn-default" />
+        </div>
+    </div>
+}
+
 </body>
 </html>

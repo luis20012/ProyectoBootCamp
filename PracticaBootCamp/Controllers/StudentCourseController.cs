@@ -99,9 +99,14 @@ namespace PracticaBootCamp.Controllers
             ViewBag.userList = userList;
         }
 
-
+        [AccessCode("StudentCourseCreate")]
+        [Authenticated]
         public ActionResult Create()
         {
+            ViewBag.Title = " Estudiante Curso";
+            ViewBag.Edit = Current.User.HasAccess("StudentCourseEdit");
+            ViewBag.New = Current.User.HasAccess("StudentCourseCreate");
+            ViewBag.Delete = Current.User.HasAccess("StudentCourseEdit");
             llenarList();
             ViewBag.courseList = courseList;
             ViewBag.studentList = studentList;
@@ -109,10 +114,15 @@ namespace PracticaBootCamp.Controllers
             ViewBag.lessonList = lessonList;
             return View();
         }
-
+        [AccessCode("StudentCourseCreate")]
+        [Authenticated]
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
+            ViewBag.Title = " Estudiante Curso";
+            ViewBag.Edit = Current.User.HasAccess("StudentCourseEdit");
+            ViewBag.New = Current.User.HasAccess("StudentCourseCreate");
+            ViewBag.Delete = Current.User.HasAccess("StudentCourseEdit");
             llenarList();
             ViewBag.courseList = courseList;
             ViewBag.studentList = studentList;
@@ -166,19 +176,22 @@ namespace PracticaBootCamp.Controllers
             }
 
         }
-
+        [AccessCode("StudentCourseEdit")]
+        [Authenticated]
         public ActionResult Edit(int Id)
         {
             llenarList();
             ViewBag.courseList = courseList;
             ViewBag.studentList = studentList;
             ViewBag.lessonList = lessonList;
-            List<StudentCourse> list = new List<StudentCourse>();
+
             StudentCourse student = StudentCourse.Dao.Get(Id);
-            list.Add(student);
-            return View(list[0]);
+            return View(student);
         }
+
         [HttpPost]
+        [AccessCode("StudentCourseEdit")]
+        [Authenticated]
         public ActionResult Edit(int Id, FormCollection collection)
         {
             llenarList();
@@ -198,23 +211,19 @@ namespace PracticaBootCamp.Controllers
                     student.Save();
                     return RedirectToAction("Index");
                 }
-                llenarList();
-                ViewBag.courseList = courseList;
-                ViewBag.studentList = studentList;
-                ViewBag.lessonList = lessonList;
 
-                return RedirectToAction("Index");
+                // Si el modelo no es válido, regresa la vista con los errores
+                return View(student);
             }
             catch
             {
-                llenarList();
-                ViewBag.courseList = courseList;
-                ViewBag.studentList = studentList;
-                ViewBag.lessonList = lessonList;
-                return RedirectToAction("Index");
+                // En caso de error, muestra nuevamente la vista con el modelo
+                StudentCourse student = StudentCourse.Dao.Get(Id);
+                return View(student);
             }
         }
-
+        [AccessCode("CourseDelete")]
+        [Authenticated]
         public ActionResult Delete(int id)
         {
             try
@@ -232,26 +241,6 @@ namespace PracticaBootCamp.Controllers
 
         }
 
-
-        //public ActionResult mycourses(Student student)
-        //{
-        //    string UserId = User.Identity.GetUserId();
-        //    string StudentId = student.user.Id.ToString();
-        //    if (string.IsNullOrEmpty(UserId))
-        //    {
-        //        return RedirectToAction("Login", "Account");
-        //    }
-        //    if (UserId == StudentId)
-        //    {
-        //        List<StudentCourse> list = null;
-        //        list = StudentCourse.Dao.GetByStudent_id((int)UserId);
-        //    }
-
-
-
-
-
-        //}
 
     }
 }

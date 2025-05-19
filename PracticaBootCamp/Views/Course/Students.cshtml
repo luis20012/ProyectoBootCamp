@@ -12,14 +12,16 @@
 
 <h2>@ViewBag.Title</h2>
 
+<link href="~/Views/Lesson/LessonIndex.css" rel="stylesheet" />
+<h1>Lista de estudiantes</h1>
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Estado</th>
-            <th>Nota</th>
-            <th>Extra</th>
+            @*<th>Nota</th>
+            <th>Extra</th>*@
 
         </tr>
     </thead>
@@ -30,7 +32,7 @@
                 <td>@student.User.Name</td>
                 <td>@student.User.FullName</td>
                 <td>@student.StateStudent.State</td>
-                <td>
+                @*<td>
                     @{
                         var courseId = (long)ViewBag.CourseId;
                         var courseMatch = student.StudentCourses.FirstOrDefault(sc => sc.Course.Id == courseId);
@@ -49,7 +51,7 @@
                     <a href="@Url.Action("Edit", "StudentCourse", new { id = student.Id })">
                         <span class="glyphicon glyphicon-edit" aria-hidden="true" style=" font-size: 20px;"></span>
                     </a>
-                </td>
+                </td>*@
             </tr>
         }
     </tbody>

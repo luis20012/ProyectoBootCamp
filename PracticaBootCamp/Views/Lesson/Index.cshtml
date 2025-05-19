@@ -10,7 +10,7 @@
     string accessDelete = ViewBag.Delete.ToString().ToLower();
 
 }
-<h1>Index de Videos</h1>
+<h1>Videos</h1>
 
 
 
@@ -19,11 +19,9 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="~/Views/Lesson/LessonIndex.css">
-
-
+    <link href="~/Views/Lesson/LessonIndex.css" rel="stylesheet" />
     <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <title>Videos Index</title>
+    <title>Videos </title>
 </head>
 <body>
     <div>
@@ -34,7 +32,7 @@
             <div class="">
                 <div class="alignLeft paddingDiv" style="display:inline-block">
                     @Html.Label("Titulo ")
-                    @Html.TextBox("Title", null, new { @class = "form-control", @maxlength = "50", @size = "50" })
+                    @Html.TextBox("Title", null, new { @class = "form-control", @maxlength = "50", @size = "50",@id = "Name", @onkeyup = "filterCoursesByName()" })
 
                 </div>
 
@@ -75,7 +73,7 @@
 
 
 <div>
-    <table class="table table-bordered table-hover" style="background-color:white;">
+    <table id="courseTable" class="table table-bordered table-hover" style="background-color:white;">
         <thead>
             <tr>
                 <th style="text-align: center;">
@@ -86,7 +84,7 @@
                     Titulo
                 </th>
                 <th style="text-align: center; ">
-                    Descripcion
+                    Descripción
                 </th>
                 <th style="text-align: center; ">
                     Url
@@ -125,7 +123,7 @@
                         @item.Url
                     </td>
                     <td>
-                        @if (accessEdit == "true" || accessDelete == "true" )
+                        @if (accessEdit == "true" || accessDelete == "true")
                         {
 
 
@@ -135,13 +133,11 @@
                                     <span class="glyphicon glyphicon-edit" aria-hidden="true" style="font-size: 20px;"></span>
                                 </a>
                             }
-                          
-                            
-                                <a href="javascript:void(0);" onclick="showVideoModal('@item.Url')">
-                                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true" style="font-size: 20px;"></span>
-                                </a>
 
-                           
+
+
+
+
 
                             if (accessDelete == "true")
                             {
@@ -150,6 +146,9 @@
                                 </a>
                             }
                         }
+                        <a href="javascript:void(0);" onclick="showVideoModal('@item.Url')">
+                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true" style="font-size: 20px;"></span>
+                        </a>
                     </td>
 
 
@@ -261,3 +260,18 @@
         transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
 </style>
+<script>
+    function filterCoursesByName() {
+        var input = document.getElementById("Name").value.toLowerCase();
+        var table = document.getElementById("courseTable");
+        var rows = table.getElementsByTagName("tr");
+
+        for (var i = 1; i < rows.length; i++) { // empiezo en 1 para saltar el encabezado
+            var cell = rows[i].getElementsByTagName("td")[0]; // columna de Nombre Curso
+            if (cell) {
+                var text = cell.textContent || cell.innerText;
+                rows[i].style.display = text.toLowerCase().includes(input) ? "" : "none";
+            }
+        }
+    }
+</script>

@@ -28,12 +28,7 @@ namespace PracticaBootCamp.Bussines
         public User User { get; set; }
         [Required(ErrorMessage =("Es obligatorio que se ponga un estado al curso"))]
         public StateTeacher StateTeacher { get; set; }
-        private List<Specialties> _specialtiess;
-        public List<Specialties> Specialtiess
-        {
-            get => _specialtiess ?? (_specialtiess = Specialties.Dao.GetBy(this));
-            set => _specialtiess = value;
-        }
+     
         //private List<Teacher> _teachers;
         //public List<Teacher> Teachers
         //{

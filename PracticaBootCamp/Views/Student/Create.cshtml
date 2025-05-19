@@ -13,6 +13,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/Views/Lesson/LessonIndex.css" rel="stylesheet" />
     <title>Create</title>
 </head>
 <body>
@@ -35,7 +36,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">Nombre</label>
                 <div class="col-sm-2">
-                    @Html.EditorFor(model => model.Tuition, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Tuition, new { htmlAttributes = new { @class = "form-control", @id = "Title" } })
                     @Html.ValidationMessageFor(model => model.Tuition, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -43,7 +44,18 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">Usuario</label>
                 <div class="col-sm-2">
-                    @Html.DropDownList("User_Id", userList, null, new { @class = "form-control" })
+                    <select id="User_Id" name="User_Id" class="form-control select2">
+                        <option></option>
+                        @foreach (var user in userList)
+                        {
+                            var parts = user.Text.Split(' ');
+                            var name = parts.Length > 0 ? parts[0] : "";
+                            var fullName = parts.Length > 1 ? string.Join(" ", parts.Skip(1)) : "";
+                            <option value="@user.Value" data-name="@name" data-fullname="@fullName">
+                                @user.Text
+                            </option>
+                        }
+                    </select>
                     @Html.ValidationMessageFor(model => model.User.Name, "", new { @class = "text-danger" })
                 </div>
 
@@ -72,3 +84,55 @@
     </div>
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        // Inicializar Select2
+        $('#lessonSelect').select2({
+            allowClear: true,
+            width: 'resolve' // Asegura que se ajuste al contenedor
+        });
+        $('#courseSelect').select2({
+            allowClear: true,
+            width: 'resolve' // Asegura que se ajuste al contenedor
+        });
+        // Manejar cambio en selección
+        $('#lessonSelect').on('change', function () {
+            var selectedOption = $(this).find('option:selected');
+            var url = selectedOption.data('url');
+            if (url) {
+                // Si es una URL de YouTube, puede que necesites transformarla a embed
+                if (url.includes("youtube.com/watch?v=")) {
+                    var embedUrl = url.replace("watch?v=", "embed/");
+                    $('#videoPreview').attr('src', embedUrl);
+                } else {
+                    $('#videoPreview').attr('src', url);
+                }
+                $('#previewContainer').show();
+            } else {
+                $('#videoPreview').attr('src', '');
+                $('#previewContainer').hide();
+            }
+        });
+    });
+    $(document).ready(function () {
+
+        // Activar select2 en el combo
+        $('.select2').select2({
+            placeholder: "Seleccione un usuario",
+            allowClear: true,
+            width: 'resolve'
+        });
+
+        // Autocompletar título al seleccionar un usuario
+        $('#User_Id').on('change', function () {
+            var selected = $(this).find('option:selected');
+            var name = selected.data('name');
+            var fullName = selected.data('fullname');
+            if (name && fullName) {
+                var cleanName = name.replace(/[()]/g, '');
+                var cleanFullName = fullName.replace(/[()]/g, '');
+                $('#Title').val(cleanName + ' ' + cleanFullName);
+            }
+        });
+    });
+</script>

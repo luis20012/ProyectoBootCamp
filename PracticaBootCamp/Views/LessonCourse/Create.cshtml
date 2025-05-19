@@ -6,13 +6,13 @@
     List<SelectListItem> courseList = (List<SelectListItem>)ViewBag.courseList;
     List<SelectListItem> lessonUrlList = (List<SelectListItem>)ViewBag.lessonUrlList;
     Layout = "~/Views/Shared/_LayoutBcri.cshtml";
-
 }
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Create</title>
+    <link href="~/Views/Lesson/LessonIndex.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -42,13 +42,27 @@
                         </a>
                     </div>*@
             </div>
-            
+
             <div class="form-group">
                 <label class="control-label col-sm-2">Videos</label>
                 <div class="col-sm-2">
-                    @Html.DropDownListFor(model => model.Lesson, lessonList, null, new { @class = "form-control", @id = "lessonSelect" })
+                    @*@Html.DropDownListFor(model => model.Lesson, lessonList, null, new { @class = "form-control", @id = "lessonSelect" })*@
+                    <select id="lessonSelect" name="Lesson" class="form-control">
+                        <option value="">Seleccione un video</option>
+                        @foreach (var item in lessonList)
+                        {
+                            var url = lessonUrlList.FirstOrDefault(x => x.Value == item.Value)?.Text;
+                            <option value="@item.Value" data-url="@url">@item.Text</option>
+                        }
+                    </select>
                     @Html.ValidationMessageFor(model => model.Lesson, "", new { @class = "text-danger" })
                 </div>
+                 <div>
+                        <a href="@Url.Action("Create", "Lesson")">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                
             </div>
 
         </div>
@@ -104,7 +118,8 @@
             if (url) {
                 // Si es una URL de YouTube, puede que necesites transformarla a embed
                 if (url.includes("youtube.com/watch?v=")) {
-                    var embedUrl = url.replace("watch?v=", "embed/");
+                    var videoId = url.split("v=")[1].split("&")[0]; // por si hay más parámetros
+                    var embedUrl = "https://www.youtube.com/embed/" + videoId;
                     $('#videoPreview').attr('src', embedUrl);
                 } else {
                     $('#videoPreview').attr('src', url);

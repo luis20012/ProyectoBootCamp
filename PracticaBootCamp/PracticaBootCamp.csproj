@@ -478,8 +478,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LessonController.cs" />
     <Compile Include="Controllers\LessonCourseController.cs" />
-    <Compile Include="Controllers\QualificationController.cs" />
-    <Compile Include="Controllers\SpecialtiesController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\StudentCourseController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
@@ -504,8 +502,6 @@
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Lesson.cs" />
     <Compile Include="Models\LessonCourse.cs" />
-    <Compile Include="Models\Qualification.cs" />
-    <Compile Include="Models\Specialties.cs" />
     <Compile Include="Models\StateCourse.cs" />
     <Compile Include="Models\StateStudent.cs" />
     <Compile Include="Models\StateTeacher.cs" />
@@ -2694,12 +2690,10 @@
     <Content Include="Views\Student\Delete.cshtml" />
     <Content Include="Views\Teacher\Delete.cshtml" />
     <Content Include="Views\Course\Students.cshtml" />
-    <Content Include="Views\Qualification\Create.cshtml" />
     <Content Include="Views\StudentCourse\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Specialty\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -42,11 +42,11 @@
                     @Html.DropDownList("Course_Id", courseList, null, new { @class = "form-control", @id = "Course_Id" })
                     @Html.ValidationMessageFor(model => model.Course, "", new { @class = "text-danger" })
                 </div>
-                <div>
+                @*<div>
                     <a href="@Url.Action("Create","Course")">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     </a>
-                </div>
+                </div>*@
             </div>
 
 

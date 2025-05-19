@@ -41,6 +41,7 @@ namespace PracticaBootCamp.Controllers
             ViewBag.Delete = Current.User.HasAccess("CourseDelete");
             ViewBag.Details = Current.User.HasAccess("CourseDetails");
             ViewBag.IndexP = Current.User.HasAccess("CourseIndexPrincipal");
+            ViewBag.Studens = Current.User.HasAccess("CourseStudents");
             llenarList();
             ViewBag.teacherList = teacherList;
             ViewBag.stateCourseList = stateCourseList;
@@ -128,6 +129,7 @@ namespace PracticaBootCamp.Controllers
             ViewBag.Delete = Current.User.HasAccess("CourseDelete");
             ViewBag.Details = Current.User.HasAccess("CourseDetails");
             ViewBag.IndexP = Current.User.HasAccess("CourseIndexPrincipal");
+            ViewBag.Studens = Current.User.HasAccess("CourseStudents");
             llenarList();
 
             ViewBag.stateCourseList = stateCourseList;
@@ -206,6 +208,7 @@ namespace PracticaBootCamp.Controllers
             ViewBag.stateCourseList = stateCourseList;
             ViewBag.lessonCourseList = lessonCourseList;
             ViewBag.teacherList = teacherList;
+            ViewBag.Today = DateTime.Today.ToString("yyyy-MM-dd");
             ViewBag.url = Request.Headers["Referer"].ToString();
             return View();
         }
@@ -220,6 +223,18 @@ namespace PracticaBootCamp.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    DateTime endDate = DateTime.Parse(collection["EndDate"]);
+
+                    if (endDate <= DateTime.Today)
+                    {
+                        ViewBag.Alert = "la fecha de finalización no puede ser hoy ni una fecha anterior ";
+                        llenarList();
+                        ViewBag.stateCourseList = stateCourseList;
+                        ViewBag.lessonCourseList = lessonCourseList;
+                        ViewBag.teacherList = teacherList;
+                        return View();
+                    }
+
                     bool courseExists = Course.Dao.GetAll().Any(c => c.Name.ToLower() == collection["Name"].ToLower());
 
 
@@ -228,8 +243,8 @@ namespace PracticaBootCamp.Controllers
                         Course course = new Course();
                         course.Name = collection["Name"];
                         course.Description = collection["Description"];
-                        course.StartDate = DateTime.Parse(collection["StartDate"]);
-                        course.EndDate = DateTime.Parse(collection["EndDate"]);
+                        course.StartDate = DateTime.Now;
+                        course.EndDate = endDate;
                         course.StateCourse = new StateCourse { Id = 1 };
                         course.Save();
                         return RedirectToAction("Index", "Course");
@@ -341,21 +356,34 @@ namespace PracticaBootCamp.Controllers
             ViewBag.lessonCourseList = lessonCourseList;
             try
             {
-                Course course = Course.Dao.Get(id);
                 if (ModelState.IsValid)
                 {
-                    //if ((collection["Name"] == course.Name))
-                    //{
-                    course.Name = collection["Name"];
-                    course.Description = collection["Description"];
-                    course.EndDate = DateTime.Parse(collection["EndDate"]);
-                    course.StateCourse = new StateCourse { Id = long.Parse(collection["StateCourse"]) };
 
-                    course.Save();
-                    return RedirectToAction("Index");
+                    Course course = Course.Dao.Get(id);
+                    DateTime endDate = DateTime.Parse(collection["EndDate"]);
 
-                    //}
-                    ViewBag.AlertDuplicateArtistName = "Ya hay un artista con ese nombre artístico";
+                    if (endDate <= DateTime.Today)
+                    {
+                        ViewBag.Alert = "la fecha de finalización no puede ser hoy ni una fecha anterior ";
+                        llenarList();
+                        ViewBag.stateCourseList = stateCourseList;
+                        ViewBag.lessonCourseList = lessonCourseList;
+                        ViewBag.teacherList = teacherList;
+                        return View(course);
+                    }
+                    bool courseExists = Course.Dao.GetAll()
+                        .Any(l => l.Name.ToLower() == collection["Name"].ToLower() && l.Id != id);
+                    if (!courseExists)
+                    {
+                        course.Name = collection["Name"];
+                        course.Description = collection["Description"];
+                        course.EndDate = endDate;
+                        course.StateCourse = new StateCourse { Id = long.Parse(collection["StateCourse"]) };
+
+                        course.Save();
+                        return RedirectToAction("Index");
+                    }
+                    ViewBag.Alert = "Ya hay un curso con este nombre";
                     llenarList();
                     ViewBag.teacherList = teacherList;
                     ViewBag.stateCourseList = stateCourseList;
@@ -618,8 +646,8 @@ namespace PracticaBootCamp.Controllers
 
         }
 
-        //[AccessCode("CourseStudents")]
-        //[Authenticated]
+        [AccessCode("CourseStudents")]
+        [Authenticated]
         public ActionResult Students(int id)
         {
             List<Course> list = new List<Course>();
@@ -641,10 +669,9 @@ namespace PracticaBootCamp.Controllers
             var students = course.StudentCourses.Select(sc => sc.Student).ToList();
 
             ViewBag.CourseName = course.Name;
-            ViewBag.CourseId = id; // <= ESTO ES LO NUEVO
+            ViewBag.CourseId = id;
             return View(students);
         }
-
 
 
     }

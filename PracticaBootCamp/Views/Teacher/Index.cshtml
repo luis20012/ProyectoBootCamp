@@ -12,13 +12,13 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="~/Views/Course/CourseIndex.css">
+    <link href="~/Views/Lesson/LessonIndex.css" rel="stylesheet" />
     <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
     <title>Profesor Index</title>
 </head>
 <body>
     <div>
-        <h1><b>Profesor</b></h1>
+        <h1><b>Profesores</b></h1>
 
         @using (Html.BeginForm("Index", "Teacher", FormMethod.Post))
         {
@@ -35,7 +35,7 @@
                 <br />
 
                 <div class="alignLeft paddingDiv" style="display:inline-block">
-                    @Html.Label("Estado del Profesor")
+                    @Html.Label("Estado")
                     @Html.DropDownList("StateTeacher.Id", stateTeacherList, null, new { @class = "form-control" })
                     
                 </div>
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div style="padding-top:10px; padding-bottom:10px;">
-                <h3>Profesores</h3>
+                
                 @if (accessNew == "true")
                 {
                     <div style="text-align:left;">
@@ -72,9 +72,7 @@
                             <th style="text-align: center; ">
                                 Apellido
                             </th>
-                            <th style="text-align: center; ">
-                                Titulo
-                            </th>
+                           
 
                             <th style="text-align: center;">
                                 Estado del Profesor
@@ -100,25 +98,21 @@
                             <td style="text-align: left; width: 10%;">
                                 @Html.DisplayFor(modelItem => item.User.Name)
                             </td>
-                            <td style="text-align: left; width: 15%;">
+                            <td style="text-align: left; width: 10%;">
 
                                 @Html.DisplayFor(modelItem => item.User.FullName)
 
                             </td>
 
-                            <td style="text-align: left; width: 8%; ">
+                         
 
-                                @Html.DisplayFor(modelItem => item.Title)
-
-                            </td>
-
-                            <td style="text-align: left; width: 8%; ">
+                            <td style="text-align: left; width: 5%; ">
 
                                 @Html.DisplayFor(modelItem => item.StateTeacher.State)
 
                             </td>
 
-                            <td style="text-align: left; width: 8%; ">
+                            <td style="text-align: left; width: 15%; ">
                                 @if (item.TeacherCourses != null && item.TeacherCourses.Count > 0)
                                 {
                                     <ul>

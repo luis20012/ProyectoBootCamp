@@ -123,7 +123,7 @@ namespace PracticaBootCamp.Controllers
                         teacherCourse.Teacher = new Teacher { Id = long.Parse(collection["Teacher_Id"]) };
                         teacherCourse.Course = new Course { Id = long.Parse(collection["Course_Id"]) };
                         teacherCourse.Save();
-                        return RedirectToAction("Index", "Teacher");
+                        return RedirectToAction("Index", "Teacher"); 
                     }
                     else
                     {

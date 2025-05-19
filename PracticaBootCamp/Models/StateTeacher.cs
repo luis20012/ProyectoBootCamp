@@ -10,6 +10,7 @@ using PracticaBootCamp.Bussines;
 using DNF.Enviroment;
 using DNF.Type.Bussines;
 using Type = DNF.Type.Bussines.Type;
+using System.ComponentModel.DataAnnotations;
 
 
 
@@ -19,9 +20,8 @@ namespace PracticaBootCamp.Bussines
     public partial class StateTeacher : IEntityDao
     {
         public override long Id { get; set; }
+        [Required(ErrorMessage = "El campo Estado es obligatorio.")]
         public string State { get; set; }
-
-
 
         public override void Save()
         {

@@ -48,24 +48,39 @@
 
 
         .curso-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             border: 1px solid #ddd;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             background-color: white;
-        }
-
-        .curso-imagen {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-            aspect-ratio: 16 / 9; /* Proporción común para imágenes */
+            height: 100%; /* Asegura que el contenedor tenga altura completa */
+            position: relative;
         }
 
         .curso-contenido {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
             padding: 15px;
         }
+
+        .curso-boton {
+            margin-top: auto; /* Empuja hacia abajo */
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            align-self: flex-start;
+        }
+
+            .curso-boton:hover {
+                background-color: #0056b3;
+            }
 
         .curso-titulo {
             font-size: 1.2em;
@@ -91,9 +106,7 @@
             font-size: 0.9em;
         }
 
-            .curso-boton:hover {
-                background-color: #0056b3;
-            }
+            
 
         .sin-detalles {
             color: #999;

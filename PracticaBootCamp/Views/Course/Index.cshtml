@@ -9,13 +9,15 @@
     string accessDetails = ViewBag.Details.ToString().ToLower();
     string accessDelete = ViewBag.Delete.ToString().ToLower();
     string accessIndexP = ViewBag.IndexP.ToString().ToLower();
+    string students = ViewBag.Studens.ToString().ToLower();
+
 }
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="~/Views/Course/CourseIndex.css">
+    <link href="~/Views/Lesson/LessonIndex.css" rel="stylesheet" />
     <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
     <title>Curso Index</title>
 </head>
@@ -51,13 +53,10 @@
 
 
                 </div>
-                @*<div style="margin-bottom: 10px;">
-                        <button type="button" class="btn btn-primary btn-sm" onclick="filterCourses('Activo')">Mostrar Activos</button>
-                        <button type="button" class="btn btn-secondary btn-sm" onclick="filterCourses('Inactivo')">Mostrar Inactivos</button>
-                        <button type="button" class="btn btn-info btn-sm" onclick="filterCourses('')">Mostrar Todos</button>
-                    </div>*@
 
-            </div><div style="padding-top:10px; padding-bottom:10px;">
+
+            </div>
+            <div style="padding-top:10px; padding-bottom:10px;">
                 @if (accessNew == "true")
                 {
                     <div style="text-align:right;">
@@ -67,12 +66,12 @@
                         </a>
                     </div>
                 }
-                <div style="text-align:right;">
+                @*<div style="text-align:right;">
                     <a href="@Url.Action("Create", "Qualification")" class="btn-success btn-sm">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                         Nuevo
                     </a>
-                </div>
+                </div>*@
 
             </div>
             <div>
@@ -83,7 +82,7 @@
                                 Nombre Curso
                             </th>
                             <th style="text-align: center; width = 8%; ">
-                                Descripcion
+                                Descripción
                             </th>
                             <th style="text-align: center; width = 8%;">
                                 Fecha Inicio
@@ -93,7 +92,7 @@
                             </th>
 
                             <th style="text-align: center;">
-                                Estado de curso
+                                Estado
                             </th>
                             <th id="extra" style="text-align: center; width: 8%;">
                                 Extra
@@ -133,7 +132,7 @@
 
     </td>
     <td>
-        @if (accessDetails == "true" || accessEdit == "true" || accessDelete == "true")
+        @if (accessDetails == "true" || accessEdit == "true" || accessDelete == "true" || students == "true")
         {
 
 
@@ -146,8 +145,6 @@
             }
             if (accessDetails == "true")
             {
-
-
                 <a href="@Url.Action("Details", "Course", new { id = item.Id })">
                     <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="font-size: 20px;"></span>
                 </a>
@@ -159,9 +156,12 @@
                     <span class="glyphicon glyphicon-trash" aria-hidden="false" style="font-size: 20px;"></span>
                 </a>
             }
+            if (students == "true")
+            {
             <a href="@Url.Action("Students", "Course", new { id = item.Id })" class="glyphicon glyphicon-tasks" aria-hidden="true" style="font-size: 20px;">
 
             </a>
+            }
 
         }
     </td>

@@ -22,7 +22,7 @@ namespace PracticaBootCamp.Controllers
         [Authenticated]
         public ActionResult Index()
         {
-            ViewBag.Title = "Lesson";
+            ViewBag.Title = "Videos";
             ViewBag.Edit = Current.User.HasAccess("LessonEdit");
             ViewBag.New = Current.User.HasAccess("LessonCreate");
             ViewBag.Delete = Current.User.HasAccess("LessonDelete");
@@ -51,13 +51,17 @@ namespace PracticaBootCamp.Controllers
         [Authenticated]
         public ActionResult Index(Lesson lesson)
         {
+            ViewBag.Title = "Lesson";
+            ViewBag.Edit = Current.User.HasAccess("LessonEdit");
+            ViewBag.New = Current.User.HasAccess("LessonCreate");
+            ViewBag.Delete = Current.User.HasAccess("LessonDelete");
+            ViewBag.Details = Current.User.HasAccess("LessonDetails");
+
             llenarList();
             ViewBag.lessonCourses = lessonCourses;
             string title = lesson.Title;
-            // Convert to lowercase for case-insensitive comparison
             string enabled = lesson.Enabled.ToString().ToLower();
             List<Lesson> list = null;
-            // Modify the filter to only consider Enabled = true if the user doesn't explicitly filter by it
             if (string.IsNullOrEmpty(enabled) || enabled == "true")
             {
                 list = Lesson.Dao.GetByIndexFilter(title, "true");
@@ -72,7 +76,8 @@ namespace PracticaBootCamp.Controllers
                 item.LessonCourses.LoadRelation(x => x.Lesson);
                 item.LessonCourses.LoadRelation(x => x.Course);
             }
-         
+            list = list.Where(c =>
+           (string.IsNullOrEmpty(title) || c.Title.Contains(title))).ToList();
             return View(list);
        
         }
@@ -107,7 +112,7 @@ namespace PracticaBootCamp.Controllers
                         lesson.Enabled = true;
                         lesson.Save();
                         string url = collection["url"].ToString();
-                        return RedirectToAction("Index", "Lesson");
+                        return RedirectToAction("Create", "LessonCourse");
                     }
                     else
                     {

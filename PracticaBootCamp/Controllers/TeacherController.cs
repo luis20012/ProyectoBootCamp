@@ -249,24 +249,25 @@ namespace PracticaBootCamp.Controllers
 
                 if (ModelState.IsValid)
                 {
-
                     Teacher teacher = Teacher.Dao.Get(id);
+                    bool TeacherExists = Teacher.Dao.GetAll()
+                        .Any(l => l.Title.ToLower() == collection["Title"].ToLower() && l.Id != id);
+                    if (TeacherExists)
+                    {
+                        ViewBag.Alert = "Ya existe un Profesor con ese Usuario";
+                        llenarList();
+                        ViewBag.stateTeacherList = stateTeacherList;
+                        ViewBag.userList = userList;
+                        return View(teacher);
+
+                    }
+                   
 
                     teacher.Title = collection["Title"];
                     teacher.StateTeacher = new StateTeacher { Id = long.Parse(collection["StateTeacher"]) };
                     teacher.User = Teacher.Dao.Get(id).User;
-
                     teacher.Save();
                     return RedirectToAction("Index");
-
-
-
-                    ViewBag.Alert = "Ya existe un Profesor con ese Usuario";
-                    llenarList();
-                    ViewBag.stateTeacherList = stateTeacherList;
-                    ViewBag.userList = userList;
-                    return View();
-
 
                 }
                 llenarList();

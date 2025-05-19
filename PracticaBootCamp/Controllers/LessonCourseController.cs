@@ -28,6 +28,10 @@ namespace PracticaBootCamp.Controllers
         [Authenticated]
         public ActionResult Create()
         {
+            ViewBag.Title = "VideosCursos";
+            //ViewBag.Edit = Current.User.HasAccess("CourseEdit");
+            ViewBag.New = Current.User.HasAccess("LessonCourseCreate");
+            //ViewBag.Delete = Current.User.HasAccess("CourseDelete");
             llenarList();
             ViewBag.lessonList = lessonList;
             ViewBag.courseList = courseList;
@@ -41,6 +45,10 @@ namespace PracticaBootCamp.Controllers
         [Authenticated]
         public ActionResult Create(FormCollection collection)
         {
+            ViewBag.Title = "VideosCursos";
+            //ViewBag.Edit = Current.User.HasAccess("CourseEdit");
+            ViewBag.New = Current.User.HasAccess("LessonCourseCreate");
+            //ViewBag.Delete = Current.User.HasAccess("CourseDelete");
             try
             {
                 if (ModelState.IsValid)
@@ -53,7 +61,7 @@ namespace PracticaBootCamp.Controllers
                         lessonCourse.Lesson = new Lesson { Id = long.Parse(collection["Lesson"]) };
                         lessonCourse.Course = new Course { Id = long.Parse(collection["Course"]) };
                         lessonCourse.Save();
-                        return RedirectToAction("Index", "Lesson");
+                        return RedirectToAction("Create", "LessonCourse");
                     }
                     else
                     {

@@ -12,11 +12,14 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Create</title>
+    <!-- CSS de Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!-- JS de Select2 -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 </head>
 <body>
-
-
-
 
     @using (Html.BeginForm("Create", "Teacher", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
@@ -30,7 +33,7 @@
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
             <div class="form-group">
-                <label class="control-label col-sm-2">Titulo</label>
+                <label class="control-label col-sm-2">Nombre Completo</label>
                 <div class="col-sm-2">
                     @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", @id = "Title" } })
 
@@ -40,8 +43,8 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">Usuario</label>
                 <div class="col-sm-2">
-                    <select id="User_Id" name="User_Id" class="form-control">
-                        <option value="">---Seleccione---</option>
+                    <select id="User_Id" name="User_Id" class="form-control select2">
+                        <option></option>
                         @foreach (var user in userList)
                         {
                             var parts = user.Text.Split(' ');
@@ -55,21 +58,13 @@
                     @Html.ValidationMessageFor(model => model.User.FullName, "", new { @class = "text-danger" })
                 </div>
 
-                @*<div class="col-sm-2">
-            @Html.DropDownList("User_Id", userList, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.User.FullName, "", new { @class = "text-danger" })
-        </div>*@
+
             </div>
 
 
 
-            @*falta agregar la fecha de inicio y fin*@
 
-            <div>
-                @*<a href="@Url.Action("Create","ActivityStatus")">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                    </a>*@
-            </div>
+
         </div>
 
         if (ViewBag.Alert != null)
@@ -96,12 +91,20 @@
 
 <script>
     $(document).ready(function () {
+
+        // Activar select2 en el combo
+        $('.select2').select2({
+            placeholder: "Seleccione un usuario",
+            allowClear: true,
+            width: 'resolve'
+        });
+
+        // Autocompletar título al seleccionar un usuario
         $('#User_Id').on('change', function () {
             var selected = $(this).find('option:selected');
             var name = selected.data('name');
             var fullName = selected.data('fullname');
             if (name && fullName) {
-                // Elimina paréntesis del nombre y apellido
                 var cleanName = name.replace(/[()]/g, '');
                 var cleanFullName = fullName.replace(/[()]/g, '');
                 $('#Title').val(cleanName + ' ' + cleanFullName);

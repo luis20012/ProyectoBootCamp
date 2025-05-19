@@ -34,7 +34,7 @@
                     @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                 </div>
             </div><div class="form-group">
-                <label class="control-label col-sm-2">Descripcion </label>
+                      <label class="control-label col-sm-2">Descripción </label>
                 <div class="col-sm-2">
                     @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
@@ -75,7 +75,7 @@
         </div>
     }
     <div>
-        @Html.ActionLink("Volver a la Grilla", "Index", "Lesson")
+        @Html.ActionLink("Volver a la Grilla", "Create", "LessonCourse")
     </div>
 </body>
 

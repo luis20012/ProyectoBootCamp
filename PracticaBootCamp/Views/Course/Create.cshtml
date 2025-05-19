@@ -33,7 +33,7 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2">Descripcion</label>
+            <label class="control-label col-sm-2">Descripción</label>
             <div class="col-sm-2">
                 @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
@@ -42,8 +42,8 @@
         <div class="form-group">
             <label class="control-label col-sm-2">Fecha de Inicio</label>
             <div class="col-sm-2">
-                @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control", type = "date" } })
-                @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+                <input type="date" name="StartDate" class="form-control" value="@ViewBag.Today" />
+                @Html.ValidationMessage("StartDate", "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">

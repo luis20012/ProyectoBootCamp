@@ -99,7 +99,7 @@ namespace PracticaBootCamp.Controllers
                 item.StudentCourses.LoadRelation(x => x.Student);
             }
             list = list.Where(c => c.StateStudent != null && c.StateStudent.Id == 1).ToList();
-            
+
             return View(list);
         }
 
@@ -133,7 +133,7 @@ namespace PracticaBootCamp.Controllers
                 item.StudentCourses.LoadRelation(x => x.Student.User);
                 item.StudentCourses.LoadRelation(x => x.Student.StateStudent);
             }
-         
+
             list = list.Where(c =>
        (string.IsNullOrEmpty(Name) || c.User.Name.Contains(Name)) &&
        (StateStudents == 0 || c.StateStudent?.Id == StateStudents))
@@ -227,27 +227,36 @@ namespace PracticaBootCamp.Controllers
             ViewBag.stateStudentList = stateStudentList;
             ViewBag.userList = userList;
 
-            Student student = Student.Dao.Get(id);
+            
             try
             {
                 if (ModelState.IsValid)
                 {
+                    Student student = Student.Dao.Get(id);
+                    bool StudentExists = Student.Dao.GetAll()
+                        .Any(l => l.Tuition.ToLower() == collection["Tuition"].ToLower() && l.Id != id);
+                    if (StudentExists)
+                    {
+                        ViewBag.Alert = "Ya existe un estudiante con ese nombre";
+                        llenarList();
+                        ViewBag.stateStudentList = stateStudentList;
+                        ViewBag.userList = userList;
+                        return View(student);
 
+                        
+                    }
                     student.Tuition = collection["Tuition"];
                     student.StateStudent = new StateStudent { Id = long.Parse(collection["StateStudent"]) };
                     student.User = Student.Dao.Get(id).User;
 
                     student.Save();
                     return RedirectToAction("Index");
-
-
                 }
 
-                ViewBag.AlertDuplicateArtistName = "Ya existe un estudiante con ese nombre";
                 llenarList();
                 ViewBag.stateStudentList = stateStudentList;
                 ViewBag.userList = userList;
-                return View(student);
+                return View();
             }
             catch
             {

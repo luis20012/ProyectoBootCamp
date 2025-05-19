@@ -25,8 +25,6 @@ namespace PracticaBootCamp.Bussines
         [Required(ErrorMessage = ("Elegir el curso a cual asignar"))]
         public Course Course { get; set; }
 
-
-
         public override void Save()
         {
             Dao.Save(this);
@@ -41,7 +39,6 @@ namespace PracticaBootCamp.Bussines
             => _dao ?? (_dao = new TeacherCourseDao());
     }
 }
-
 
 
 namespace PracticaBootCamp.Dao

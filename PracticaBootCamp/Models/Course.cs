@@ -41,12 +41,7 @@ namespace PracticaBootCamp.Bussines
             get => _lessonCourses ?? (_lessonCourses = LessonCourse.Dao.GetBy(this));
             set => _lessonCourses = value;
         }
-        private List<Qualification> _qualifications;
-        public List<Qualification> Qualifications
-        {
-            get => _qualifications ?? (_qualifications = Qualification.Dao.GetBy(this));
-            set => _qualifications = value;
-        }
+       
         private List<StudentCourse> _studentCourses;
         public List<StudentCourse> StudentCourses
         {
